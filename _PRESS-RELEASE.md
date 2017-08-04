@@ -1,5 +1,5 @@
 # Project Name #
-
+YCWL
 <!-- 
 > This material was originally posted [here](http://www.quora.com/What-is-Amazons-approach-to-product-development-and-product-management). It is reproduced here for posterities sake.
 
@@ -19,26 +19,44 @@ Once the project moves into development, the press release can be used as a touc
 ## Heading ##
   > Name the product in a way the reader (i.e. your target customers) will understand.
 
+You can't win the lotto app
+
 ## Sub-Heading ##
   > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+
+Californians who play the state lottery are able to see the impossible odds and money wasted on the state lottery.
 
 ## Summary ##
   > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
 
+The state lottery can be viewed as a tax on those who either have never concerned themselves with the odds or are simply bad at math. 
+Either way the lottery is simply a waste of money. You may hold an optimistic view that someone has to win, enter the 'You can't win the Lotto app.'
+Watch the money you spend on lotto tickets pile up and dissapear while chasing the 'winner winner chicken dinner.'
+
 ## Problem ##
   > Describe the problem your product solves.
+Many Californian's view the state lottery as a game of chance, but the reality is much darker. Politicians benefit from the state lottery monetarily without having to raise taxes. 
+The lottery typically attracts the poor. People who will have to inheriently spend a larger portion of their wealth per chance to win big. This is essentially tricking those 
+with the least into giving it to those who are doing just fine economically. 
 
 ## Solution ##
   > Describe how your product elegantly solves the problem.
+Draws attention to inconvient truth about the nature of the state lottery. This app makes it readily apparent to the user that it is next to impossible to win the lottery and the 
+funds used to play the lottery are essentially thrown away. 
+
 
 ## Quote from You ##
   > A quote from a spokesperson in your company.
+'This is a stupid idea and I quit.'
 
 ## How to Get Started ##
   > Describe how easy it is to get started.
+With a quick guess at the winning lottery number you can being to watch the money you're wasting on the lottery pile up.'
 
 ## Customer Quote ##
   > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
+'I don't enjoy this app. I rather live in blissful ignorance. I can win. I'm a winner. I can feel it.'
 
 ## Closing and Call to Action ##
   > Wrap it up and give pointers where the reader should go next.
+Think you can win the lottery? See how much money and time it would take to do so. Visit the 'You can't win the lottery' app and prove us wrong.'
