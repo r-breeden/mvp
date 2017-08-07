@@ -23,6 +23,7 @@
     "babel-loader": "^7.1.1",
     "body-parser": "^1.17.2",
     "express": "^4.15.3",
+    "express-path": "^0.3.8",
     "jquery": "^3.2.1",
     "mongoose": "^4.11.5",
     "nodemon": "^1.11.0",

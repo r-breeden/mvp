@@ -25,5 +25,6 @@ let save = (model, cb) => {
   });
 }
 
+module.exports.Game = Game;
 module.exports.save = save;
 

@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import $ from "jquery";
+import $ from 'jquery';
+import { GameResults } from './gameResults.jsx';
+
+console.log(GameResults);
 
 export class App extends React.Component {
   constructor(props) {
@@ -9,7 +12,10 @@ export class App extends React.Component {
     super(props);
     this.state = {
       textValue:'',
-      gameId: location.pathname.split('/')[1],
+      gameId: location.pathname.split('/')[1] || 'new',
+      gameResults: false,
+      hasGuessed: false,
+      moneyWasted: 0
     }
 
     //RAB// bind here
@@ -17,6 +23,19 @@ export class App extends React.Component {
     //bind makes a new function
     this.handleChange = this.handleChange.bind(this);
     this.submitClick = this.submitClick.bind(this);
+    if (this.state.gameId !== 'new') {
+      $.ajax({
+        url: '/api/v1/' + this.state.gameId,
+        type: 'GET',
+      }).then( function(data){
+          console.log(data);
+         this.setState({
+            gameId: data._id.toString(),
+            gameResults: data.winner,
+            moneyWasted: data.wasted_money
+         });
+      }.bind(this))   
+    }
   }
 
   handleChange (e) {
@@ -27,7 +46,7 @@ export class App extends React.Component {
       e.preventDefault();
       //if there is a game id present
       $.ajax({
-        url: '/' + this.state.gameId,
+        url: '/api/v1/' + this.state.gameId + '/guess',
         type: 'POST',
         contentType: 'application/json',
         data: JSON.stringify({value: this.state.textValue}),
@@ -39,8 +58,14 @@ export class App extends React.Component {
         // wasted_money: number
         //}
         //data = JSON.parse(data);
-        var url =  data._id.toString();
-        this.setState({gameId: url});
+        console.log(data);
+        this.setState({
+          gameId: data._id.toString(),
+          gameResults: data.winner,
+          moneyWasted: data.wasted_money
+        });
+        //update that they have made a guess
+        this.setState( {hasGuessed: true} )
 
         //add the gameId to the url 
         window.history.replaceState(null, null, url); 
@@ -52,8 +77,12 @@ export class App extends React.Component {
 
   render(){
     var title = "You Can't Win The Lottery";
-
     var moneyWasted = '$4.50';
+
+    var results;
+    if ( this.state.hasGuessed ) {
+      results = <GameResults result={ this.state.gameResults }/>
+    }
 
     return(
     <div>
@@ -61,8 +90,9 @@ export class App extends React.Component {
       <form id='lottoForm'>
         Your Lotto Numbers: <input type='number' value={this.state.textValue} onChange={this.handleChange}/>
         <input type='submit' name='Submit' onClick={ this.submitClick }/>
-        <span> Money Wasted: { moneyWasted }</span>
+        <span> Money Wasted: ${ this.state.moneyWasted }</span>
       </form>
+      {results}
       <p> condescending remarks </p>
     </div>
     );
